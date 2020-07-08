@@ -13,7 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class DiceRollerController {
 
-    @GetMapping("/{nombresdes}/{facesdes}")
+    @GetMapping("/{nombresdes:[\\d]+}/{facesdes:[\\d]+}")
     public ResponseEntity<Object> index(@PathVariable int nombresdes, @PathVariable int facesdes) {
         log.info("appel : /" + nombresdes + "/" + facesdes);
         if (nombresdes <= 0 || nombresdes > 1000 || facesdes <= 0 || facesdes > 1000) {
